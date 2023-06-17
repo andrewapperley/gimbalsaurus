@@ -6,7 +6,6 @@
 //
 
 #import "GblSaurusObject.h"
-#import "gimbal_type.h"
 
 @implementation GblSaurusObject
 
