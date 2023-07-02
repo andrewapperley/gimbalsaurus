@@ -23,6 +23,8 @@ static const NSMutableDictionary *_registeredTypes;
 
 + (void)load {
     [super load];
+//    TODO: Might be useful to use NSCache and setup a listener for the registered types internal
+//    list changing so this doesn't become stale
     _registeredTypes = [[NSMutableDictionary alloc] init];
 }
 
@@ -144,6 +146,48 @@ static const NSMutableDictionary *_registeredTypes;
 
 - (BOOL)isEqualTo:(GblSaurusType *)otherType {
     return GblType_check(self._type, otherType._type);
+}
+
+#pragma mark - Getters
+
+- (NSString *)name {
+    return [NSString stringWithCString:GblType_name(self._type) encoding:NSUTF8StringEncoding];
+}
+
+- (GblQuark)nameQuark {
+    return GblType_nameQuark(self._type);
+}
+
+- (GblSaurusType *)parent {
+    return [GblSaurusType fromType:GblType_parent(self._type)];
+}
+
+- (GblSaurusType *)root {
+    return [GblSaurusType fromType:GblType_root(self._type)];
+}
+
+- (size_t)depth {
+    return GblType_depth(self._type);
+}
+
+- (BOOL)valid {
+    return GblType_verify(self._type);
+}
+
+- (const GblTypeInfo *)info {
+    return GblType_info(self._type);
+}
+
+- (GblIPlugin *)plugin {
+    return GblType_plugin(self._type);
+}
+
+- (GblRefCount)classRefCount {
+    return GblType_classRefCount(self._type);
+}
+
+- (GblRefCount)instanceRefCount {
+    return GblType_instanceRefCount(self._type);
 }
 
 @end

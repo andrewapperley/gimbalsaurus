@@ -70,8 +70,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, nonnull, readonly)GblSaurusType *parent;
 @property(nonatomic, nonnull, readonly)GblSaurusType *root;
 @property(nonatomic, readonly)size_t depth;
-@property(nonatomic, readonly)BOOL verify;
-@property(nonatomic, nonnull, readonly)GblTypeInfo *info;
+@property(nonatomic, readonly)BOOL valid;
+@property(nonatomic, nonnull, readonly)const GblTypeInfo *info;
 @property(nonatomic, nonnull, readonly)GblIPlugin *plugin;
 @property(nonatomic, readonly)GblRefCount classRefCount;
 @property(nonatomic, readonly)GblRefCount instanceRefCount;
