@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F8B5D932A3E12F800150A9C /* GblSaurusType.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F8B5D912A3E12F800150A9C /* GblSaurusType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F8B5D942A3E12F800150A9C /* GblSaurusType.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B5D922A3E12F800150A9C /* GblSaurusType.m */; };
+		0F8B5D972A52099000150A9C /* GblSaurusTypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B5D962A52099000150A9C /* GblSaurusTypeTests.m */; };
 		0FAE1BB72A37B47F007219B2 /* liblibGimbal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FAE1BB42A37B470007219B2 /* liblibGimbal.a */; };
 		0FAE1BB82A37B47F007219B2 /* libtinycthread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FAE1BB62A37B470007219B2 /* libtinycthread.a */; };
 		0FAE1BB92A37B47F007219B2 /* libTinyRegexC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FAE1BB22A37B470007219B2 /* libTinyRegexC.a */; };
@@ -84,6 +87,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F8B5D912A3E12F800150A9C /* GblSaurusType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GblSaurusType.h; sourceTree = "<group>"; };
+		0F8B5D922A3E12F800150A9C /* GblSaurusType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GblSaurusType.m; sourceTree = "<group>"; };
+		0F8B5D962A52099000150A9C /* GblSaurusTypeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GblSaurusTypeTests.m; sourceTree = "<group>"; };
 		0FAE1BA62A37B470007219B2 /* LibGimbal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LibGimbal.xcodeproj; path = ../build/LibGimbal.xcodeproj; sourceTree = "<group>"; };
 		0FE37F8F2A36388A00322F94 /* gimbalsaurus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = gimbalsaurus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE37F922A36388A00322F94 /* gimbalsaurus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gimbalsaurus.h; sourceTree = "<group>"; };
@@ -123,6 +129,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F8B5D952A52096E00150A9C /* meta */ = {
+			isa = PBXGroup;
+			children = (
+				0F8B5D962A52099000150A9C /* GblSaurusTypeTests.m */,
+			);
+			path = meta;
+			sourceTree = "<group>";
+		};
 		0FAE1BA72A37B470007219B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +187,7 @@
 		0FE37F9D2A36388B00322F94 /* gimbalsaurusTests */ = {
 			isa = PBXGroup;
 			children = (
+				0F8B5D952A52096E00150A9C /* meta */,
 				0FE37F9E2A36388B00322F94 /* gimbalsaurusTests.m */,
 			);
 			path = gimbalsaurusTests;
@@ -223,6 +238,8 @@
 				0FE37FC32A3641D800322F94 /* gimbalsaurus_meta.h */,
 				0FE37FC62A3643FE00322F94 /* GblSaurusObject.h */,
 				0FE37FC72A3643FE00322F94 /* GblSaurusObject.m */,
+				0F8B5D912A3E12F800150A9C /* GblSaurusType.h */,
+				0F8B5D922A3E12F800150A9C /* GblSaurusType.m */,
 			);
 			path = meta;
 			sourceTree = "<group>";
@@ -252,6 +269,7 @@
 			files = (
 				0FE37FC12A3641C400322F94 /* gimbalsaurus_strings.h in Headers */,
 				0FE37FB92A363DF900322F94 /* gimbalsaurus_algorithms.h in Headers */,
+				0F8B5D932A3E12F800150A9C /* GblSaurusType.h in Headers */,
 				0FE37FC82A3643FE00322F94 /* GblSaurusObject.h in Headers */,
 				0FE37FB62A363DCF00322F94 /* gimbalsaurus_core.h in Headers */,
 				0FE37FA02A36388B00322F94 /* gimbalsaurus.h in Headers */,
@@ -399,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FE37F942A36388A00322F94 /* gimbalsaurus.docc in Sources */,
+				0F8B5D942A3E12F800150A9C /* GblSaurusType.m in Sources */,
 				0FE37FC92A3643FE00322F94 /* GblSaurusObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F8B5D972A52099000150A9C /* GblSaurusTypeTests.m in Sources */,
 				0FE37F9F2A36388B00322F94 /* gimbalsaurusTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

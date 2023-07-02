@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "gimbal_typedefs.h": "c",
+        "gimbal_quark.h": "c",
+        "gimbal_builtin_types.h": "c"
+    }
+}
