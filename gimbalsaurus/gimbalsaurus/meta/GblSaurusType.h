@@ -6,8 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "gimbal_builtin_types.h"
-#import "gimbal_type.h"
+#import <gimbal_builtin_types.h>
+#import <gimbal_type.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

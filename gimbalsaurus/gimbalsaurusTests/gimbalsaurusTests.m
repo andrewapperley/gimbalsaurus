@@ -6,7 +6,6 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <gimbalsaurus/gimbalsaurus.h>
 
 @interface gimbalsaurusTests : XCTestCase
 

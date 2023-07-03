@@ -6,7 +6,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <gimbalsaurus/GblSaurusType.h>
+#import <gimbalsaurus/gimbalsaurus_meta.h>
 
 @interface GblSaurusTypeTests : XCTestCase
 
@@ -14,6 +14,8 @@
 
 @implementation GblSaurusTypeTests
 
-//- (void)test
+- (void)test {
+    
+}
 
 @end
