@@ -6,7 +6,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <gimbalsaurus/gimbalsaurus_meta.h>
+#import <gimbalsaurus/GblSaurusType.h>
 
 @interface GblSaurusTypeTests : XCTestCase
 
@@ -14,8 +14,18 @@
 
 @implementation GblSaurusTypeTests
 
-- (void)test {
-    
+- (void)testStaticRegistration {
+    struct GblTypeInfo info;
+    GblSaurusType *type = [GblSaurusType
+                           registerStaticWithName:@"TestType"
+                           baseType:nil
+                           typeInfo:&info
+                           typeFlags:0];
+    XCTAssert([type.name isEqual:@"TestType"]);
+    XCTAssert(GblSaurusType.registeredCount == GblSaurusType.builtinCount + 1);
+    XCTAssertNil(type.parent);
+    XCTAssertNotNil(type.root);
+    XCTAssert([type.root isEqualTo:type]);
 }
 
 @end

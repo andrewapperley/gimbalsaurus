@@ -37,7 +37,7 @@ static const NSMutableDictionary *_registeredTypes;
     self = [super init];
     if (self) {
         __type = GblType_registerStatic(
-                                        [name cStringUsingEncoding:NSUnicodeStringEncoding],
+                                        [name cStringUsingEncoding:NSUTF8StringEncoding],
                                         baseType,
                                         info,
                                         flags);
@@ -47,15 +47,17 @@ static const NSMutableDictionary *_registeredTypes;
 }
 
 + (instancetype)fromType:(GblType)type {
+    if (!type) { return nil; }
     GblSaurusType *sType = [[GblSaurusType alloc] init];
     sType._type = type;
     return sType;
 }
 
 + (instancetype)registerStaticWithName:(NSString *)name
-                          baseType:(GblSaurusType *)baseType
+                          baseType:(nullable GblSaurusType *)baseType
                           typeInfo:(GblTypeInfo *)info
                         typeFlags:(GblFlags)flags {
+    NSAssert(name, @"Name is required to register a type.");
     return [[GblSaurusType alloc] initWithName:name
                                       baseType:baseType._type
                                       typeInfo:info

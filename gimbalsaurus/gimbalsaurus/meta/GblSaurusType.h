@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Class Methods
 
 + (instancetype)registerStaticWithName:(NSString *)name
-                          baseType:(GblSaurusType *)baseType
+                          baseType:(nullable GblSaurusType *)baseType
                           typeInfo:(GblTypeInfo *)info
                           typeFlags:(GblFlags)flags;
 
@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, nonnull, readonly)NSString *name;
 @property(nonatomic, readonly)GblQuark nameQuark;
-@property(nonatomic, nonnull, readonly)GblSaurusType *parent;
+@property(nonatomic, nullable, readonly)GblSaurusType *parent;
 @property(nonatomic, nonnull, readonly)GblSaurusType *root;
 @property(nonatomic, readonly)size_t depth;
 @property(nonatomic, readonly)BOOL valid;
