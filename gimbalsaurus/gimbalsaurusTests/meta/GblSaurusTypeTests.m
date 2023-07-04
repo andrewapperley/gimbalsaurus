@@ -53,6 +53,7 @@
 
 - (void)testGetTypeByName {
     XCTAssertNotNil([GblSaurusType typeFromName:@"TestType"]);
+    XCTAssert([[GblSaurusType typeFromName:@"TestType"].name isEqualToString:@"TestType"]);
 }
 
 @end
