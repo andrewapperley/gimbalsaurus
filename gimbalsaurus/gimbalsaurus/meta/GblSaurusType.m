@@ -23,8 +23,7 @@ static const NSMutableDictionary *_registeredTypes;
 
 + (void)load {
     [super load];
-//    TODO: Might be useful to use NSCache and setup a listener for the registered types internal
-//    list changing so this doesn't become stale
+//    TODO: Might be useful to use NSCache and setup a listener for the registered types internal list changing so this doesn't become stale
     _registeredTypes = [[NSMutableDictionary alloc] init];
 }
 
@@ -47,17 +46,16 @@ static const NSMutableDictionary *_registeredTypes;
 }
 
 + (instancetype)fromType:(GblType)type {
-    if (!type) { return nil; }
     GblSaurusType *sType = [[GblSaurusType alloc] init];
-    sType._type = type;
+    sType._type = type ?: GBL_INVALID_TYPE;
     return sType;
 }
 
 + (instancetype)registerStaticWithName:(NSString *)name
-                          baseType:(nullable GblSaurusType *)baseType
-                          typeInfo:(GblTypeInfo *)info
+                          baseType:(GblSaurusType *)baseType
+                          typeInfo:(nullable GblTypeInfo *)info
                         typeFlags:(GblFlags)flags {
-    NSAssert(name, @"Name is required to register a type.");
+    NSAssert(name.length > 0, @"Name is required to register a type.");
     return [[GblSaurusType alloc] initWithName:name
                                       baseType:baseType._type
                                       typeInfo:info

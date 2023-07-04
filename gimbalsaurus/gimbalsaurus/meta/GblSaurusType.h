@@ -16,8 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Class Methods
 
 + (instancetype)registerStaticWithName:(NSString *)name
-                          baseType:(nullable GblSaurusType *)baseType
-                          typeInfo:(GblTypeInfo *)info
+                          baseType:(GblSaurusType *)baseType
+                          typeInfo:(nullable GblTypeInfo *)info
                           typeFlags:(GblFlags)flags;
 
 + (instancetype)nextRegisteredFromPrevious:(GblSaurusType *)previousType;
