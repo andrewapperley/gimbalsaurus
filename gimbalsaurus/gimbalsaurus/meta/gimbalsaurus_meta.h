@@ -10,5 +10,6 @@
 
 #import <gimbalsaurus/GblSaurusObject.h>
 #import <gimbalsaurus/GblSaurusType.h>
+#import <gimbalsaurus/GblSaurusClass.h>
 
 #endif /* gimbalsaurus_meta_h */

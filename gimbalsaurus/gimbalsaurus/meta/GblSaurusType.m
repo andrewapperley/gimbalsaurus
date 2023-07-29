@@ -6,6 +6,17 @@
 //
 
 #import "GblSaurusType.h"
+#import "gimbalsaurus_meta_private.h"
+
+GBL_SAURUS_TYPE_PRIVATE
+
+@implementation InvalidType
+
+- (GblType)_type {
+    return GBL_INVALID_TYPE;
+}
+
+@end
 
 @interface GblSaurusType ()
 
@@ -13,8 +24,6 @@
                     baseType:(GblType)baseType
                     typeInfo:(GblTypeInfo *)info
                    typeFlags:(GblFlags)flags;
-
-@property(nonatomic)GblType _type;
 @end
 
 @implementation GblSaurusType
@@ -49,6 +58,13 @@ static const NSMutableDictionary *_registeredTypes;
     GblSaurusType *sType = [[GblSaurusType alloc] init];
     sType._type = type ?: GBL_INVALID_TYPE;
     return sType;
+}
+
++ (instancetype)registerStaticBaseWithName:(NSString *)name {
+    return [GblSaurusType registerStaticWithName:name
+                                        baseType:[[InvalidType alloc] init]
+                                        typeInfo:nil
+                                       typeFlags:GBL_TYPE_FLAGS_NONE];
 }
 
 + (instancetype)registerStaticWithName:(NSString *)name
@@ -144,8 +160,12 @@ static const NSMutableDictionary *_registeredTypes;
     return nil;//GblType_extension(self._type, interface._type);
 }
 
-- (BOOL)isEqualTo:(GblSaurusType *)otherType {
+- (BOOL)check:(GblSaurusType *)otherType {
     return GblType_check(self._type, otherType._type);
+}
+
+- (BOOL)isEqualTo:(GblSaurusType *)otherType {
+    return [self check:otherType];
 }
 
 #pragma mark - Getters

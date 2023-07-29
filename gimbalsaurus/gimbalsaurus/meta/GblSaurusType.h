@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Class Methods
 
++ (instancetype)registerStaticBaseWithName:(NSString *)name;
+
 + (instancetype)registerStaticWithName:(NSString *)name
                           baseType:(GblSaurusType *)baseType
                           typeInfo:(nullable GblTypeInfo *)info
@@ -60,8 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (GblInterface *)extensionWithInterface:(GblSaurusType *)interface;
 
-// this will be an override of isEqualTo:
-//GBL_EXPORT GblBool            GblType_check            (GBL_VSELF, GblType other)      GBL_NOEXCEPT;
+- (BOOL)check:(GblSaurusType *)otherType;
 
 #pragma mark - Properties
 
@@ -76,6 +77,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly)GblRefCount classRefCount;
 @property(nonatomic, readonly)GblRefCount instanceRefCount;
 
+@end
+
+@interface InvalidType: GblSaurusType
 @end
 
 NS_ASSUME_NONNULL_END

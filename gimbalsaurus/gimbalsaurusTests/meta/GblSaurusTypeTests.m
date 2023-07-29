@@ -8,18 +8,6 @@
 #import <XCTest/XCTest.h>
 #import <gimbalsaurus/GblSaurusType.h>
 
-@interface InvalidType: GblSaurusType
-@property(nonatomic, readonly)GblType *_type;
-@end
-
-@implementation InvalidType
-
-- (GblType *)_type {
-    return 0; // GBL_INVALID_TYPE
-}
-
-@end
-
 @interface GblSaurusTypeTests : XCTestCase
 @property(nullable, nonatomic)GblSaurusType *invalid;
 @property(nullable, nonatomic)GblSaurusType *type;
