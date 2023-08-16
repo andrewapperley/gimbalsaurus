@@ -15,6 +15,23 @@ Clone the project
 git clone git@github.com:andrewapperley/gimbalsaurus.git
 ```
 
+Install CMake
+```
+Visit https://cmake.org/install/ and install MacOS binary in /Applications
+Run sudo "/Applications/CMake.app/Contents/bin/cmake-gui" --install
+```
+
+Install Brew
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Install Xcode
+```
+brew install xcodesorg/made/xcodes
+xcodes install --latest
+```
+
 Run `build.sh`
 ```
 ./build.sh
