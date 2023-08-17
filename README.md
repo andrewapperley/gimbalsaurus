@@ -32,6 +32,11 @@ brew install xcodesorg/made/xcodes
 xcodes install --latest
 ```
 
+Install fastlane
+```
+brew install fastlane
+```
+
 Run `build.sh`
 ```
 ./build.sh
