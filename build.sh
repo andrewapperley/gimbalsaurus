@@ -8,4 +8,4 @@ cmake ../libgimbal -DGBL_ENABLE_TESTS=ON -GXcode
 cmake --build .
 # Build project
 cd ../gimbalsaurus
-xcodebuild -scheme gimbalsaurus build
+xcodebuild -scheme gimbalsaurus clean build
