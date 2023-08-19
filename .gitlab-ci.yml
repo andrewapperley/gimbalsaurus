@@ -6,10 +6,10 @@ build-job:
 test-job:
   stage: test
   script:
-    - echo "This job tests something"
+    - xcodebuild test-without-building -scheme gimbalsaurusTests
 
-deploy-prod:
-  stage: deploy
-  script:
-    - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
-  environment: production
+# deploy-prod:
+#   stage: deploy
+#   script:
+#     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+#   environment: production
