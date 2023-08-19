@@ -6,6 +6,7 @@ build-job:
 test-job:
   stage: test
   script:
+    - cd ./gimbalsaurus
     - xcodebuild test -scheme gimbalsaurusTests
 
 # deploy-prod:
