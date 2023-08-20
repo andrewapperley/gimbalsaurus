@@ -9,4 +9,5 @@ test-job:
   dependencies:
     - build-job
   script:
+    - cd ./gimbalsaurus
     - xcodebuild test -scheme gimbalsaurusTests
