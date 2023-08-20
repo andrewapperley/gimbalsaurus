@@ -8,6 +8,8 @@ test-job:
   needs: ["build-job"]
   dependencies:
     - build-job
+  variables:
+    GIT_CLEAN_FLAGS: -ffdx -e build/
   script:
     - cd ./gimbalsaurus
     - xcodebuild test -scheme gimbalsaurusTests
