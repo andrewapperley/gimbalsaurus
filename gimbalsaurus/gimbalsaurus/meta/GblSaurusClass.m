@@ -35,21 +35,21 @@ GBL_SAURUS_CLASS_PRIVATE
 
 #pragma mark - Instance Methods
 
-//- (GblRefCount)unreference {
-//
-//}
-//
-//- (GBL_RESULT)destroyFloating {
-//
-//}
-//
+- (GblRefCount)unreference {
+    return GblClass_unrefDefault(self._class);
+}
+
+- (GBL_RESULT)destroyFloating {
+    return GblClass_destructFloating(self._class);
+}
+
 //- (GBL_RESULT)constructFloatingFromType:(GblSaurusType *)type {
 //
 //}
-//
-//- (GBL_RESULT)destructFloating {
-//
-//}
+
+- (GBL_RESULT)destructFloating {
+    return GblClass_destructFloating(self._class);
+}
 
 - (BOOL)check:(GblSaurusType *)otherType {
     return GblClass_check(self._class, otherType._type);
@@ -68,6 +68,8 @@ GBL_SAURUS_CLASS_PRIVATE
 //}
 
 - (void)dealloc {
+    self._default = nil;
+    self._super = nil;
     self._class = nil;
 }
 
